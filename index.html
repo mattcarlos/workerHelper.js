@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>WORKER EXAMPLE</title>
+    
+    <link rel='shortcut icon' type='image/x-icon' href='favicon.ico' />
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <script src="js/workerHelper.js"></script>
+</head>
+<body>
+    <script type="text/javascript">
+        //this function will execute inside it's own scope.  No window or document.
+        var method = function (data) {
+            //postMessage must be used if the browser supports web workers, return is used otherwise
+            if (typeof WorkerGlobalScope !== 'undefined' && self instanceof WorkerGlobalScope) {
+                postMessage(data);
+            } else {
+                return data;
+            }
+        };
+        
+        //data can be string, number, array or object.  Passing anything else will return false
+        var data = "test";
+        
+        //callback is executed with the return or postMessage argument from method
+        var callback = function (data) { console.log(data) };
+        
+        workerHelper.createWorker(method, data, callback);
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
