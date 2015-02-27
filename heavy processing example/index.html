@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>WORKER EXAMPLE</title>
+    
+    <link rel='shortcut icon' type='image/x-icon' href='favicon.ico' />
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="js/workerData.js"></script>
+    <script src="js/workerHelper.js"></script>
+</head>
+<body>
+    <div id="test">
+        <p>please wait, loading</p>
+        <h3>please wait, loading</h3>
+        <h4>please wait, loading</h4>
+        <p>please wait, loading</p>
+        <h3>please wait, loading</h3>
+        <h4>please wait, loading</h4>
+        <p>please wait, loading</p>
+        <h3>please wait, loading</h3>
+        <h4>please wait, loading</h4>
+        <p>please wait, loading</p>
+        <h3>please wait, loading</h3>
+        <h4>please wait, loading</h4>
+        <p>please wait, loading</p>
+        <h3>please wait, loading</h3>
+        <h4>please wait, loading</h4>
+        <p>please wait, loading</p>
+        <h3>please wait, loading</h3>
+        <h4>please wait, loading</h4>
+        <p>please wait, loading</p>
+        <h3>please wait, loading</h3>
+        <h4>please wait, loading</h4>
+        <p>please wait, loading</p>
+        <h3>please wait, loading</h3>
+        <h4>please wait, loading</h4>
+        <p>please wait, loading</p>
+        <h3>please wait, loading</h3>
+        <h4>please wait, loading</h4>
+        <p>please wait, loading</p>
+        <h3>please wait, loading</h3>
+        <h4>please wait, loading</h4>
+        <p>please wait, loading</p>
+        <h3>please wait, loading</h3>
+        <h4>please wait, loading</h4>
+        <p>please wait, loading</p>
+        <h3>please wait, loading</h3>
+        <h4>please wait, loading</h4>
+        <p>please wait, loading</p>
+        <h3>please wait, loading</h3>
+        <h4>please wait, loading</h4>
+        <p>please wait, loading</p>
+        <h3>please wait, loading</h3>
+        <h4>please wait, loading</h4>
+        <p>please wait, loading</p>
+        <h3>please wait, loading</h3>
+        <h4>please wait, loading</h4>
+        <p>please wait, loading</p>
+        <h3>please wait, loading</h3>
+        <h4>please wait, loading</h4>
+        <p>please wait, loading</p>
+        <h3>please wait, loading</h3>
+        <h4>please wait, loading</h4>
+        <p>please wait, loading</p>
+        <h3>please wait, loading</h3>
+        <h4>please wait, loading</h4>
+        <p>please wait, loading</p>
+        <h3>please wait, loading</h3>
+        <h4>please wait, loading</h4>
+        <p>please wait, loading</p>
+        <h3>please wait, loading</h3>
+        <h4>please wait, loading</h4>
+        <p>please wait, loading</p>
+        <h3>please wait, loading</h3>
+        <h4>please wait, loading</h4>
+        <p>please wait, loading</p>
+        <h3>please wait, loading</h3>
+        <h4>please wait, loading</h4>
+        <p>please wait, loading</p>
+        <h3>please wait, loading</h3>
+        <h4>please wait, loading</h4>
+        <p>please wait, loading</p>
+        <h3>please wait, loading</h3>
+        <h4>please wait, loading</h4>
+        <p>please wait, loading</p>
+        <h3>please wait, loading</h3>
+        <h4>please wait, loading</h4>
+        <p>please wait, loading</p>
+        <h3>please wait, loading</h3>
+        <h4>please wait, loading</h4>
+        <p>please wait, loading</p>
+        <h3>please wait, loading</h3>
+        <h4>please wait, loading</h4>
+        <p>please wait, loading</p>
+        <h3>please wait, loading</h3>
+        <h4>please wait, loading</h4>
+        <p>please wait, loading</p>
+        <h3>please wait, loading</h3>
+        <h4>please wait, loading</h4>
+        <p>please wait, loading</p>
+        <h3>please wait, loading</h3>
+        <h4>please wait, loading</h4>
+        <p>please wait, loading</p>
+        <h3>please wait, loading</h3>
+        <h4>please wait, loading</h4>
+        <p>please wait, loading</p>
+        <h3>please wait, loading</h3>
+        <h4>please wait, loading</h4>
+        <p>please wait, loading</p>
+        <h3>please wait, loading</h3>
+        <h4>please wait, loading</h4>
+        <p>please wait, loading</p>
+        <h3>please wait, loading</h3>
+        <h4>please wait, loading</h4>
+        <p>please wait, loading</p>
+        <h3>please wait, loading</h3>
+        <h4>please wait, loading</h4>
+        <p>please wait, loading</p>
+        <h3>please wait, loading</h3>
+        <h4>please wait, loading</h4>
+        <p>please wait, loading</p>
+        <h3>please wait, loading</h3>
+        <h4>please wait, loading</h4>
+        <p>please wait, loading</p>
+        <h3>please wait, loading</h3>
+        <h4>please wait, loading</h4>
+        <p>please wait, loading</p>
+        <h3>please wait, loading</h3>
+        <h4>please wait, loading</h4>
+    </div>
+    <script type="text/javascript">
+        //this function will execute inside it's own scope.  No window or document.
+        var method = function (data) {
+            
+            var isSorted = function (list) {
+                for (var i = 0; i < list.length; i++) {
+                    for (var it = i; it < list.length; it++) {
+                        if (list[i] > list[it]) {
+                            return false;
+                        }
+                    }
+                }
+                return true;
+            }
+            
+            while (!isSorted(data)) {
+                for (var i = 0; i < data.length; i++) {
+                    for (var it = i; it < data.length; it++) {
+                        if (data[i] > data[it]) {
+                            var store = data[i];
+                            data[i] = data[it];
+                            data[it] = store;
+                        }
+                    }
+                }
+            }
+            
+            //postMessage must be used if the browser supports web workers, return is used otherwise
+            if (typeof WorkerGlobalScope !== 'undefined' && self instanceof WorkerGlobalScope) {
+                postMessage(data);
+            } else {
+                return data;
+            }
+        };
+        
+        //data can be string, number, array or object.  Passing anything else will return false
+        var data = window.workerData;
+        
+        
+        //callback is executed with the return or postMessage argument from method
+        var callback = function (data) {
+            console.log("total time to execute: " + (performance.now() - window.time) + " ms");
+            var html = "";
+            for (var i = data.length - 100; i < data.length; i++) {
+                html += "<p>" + data[i] + "</p>";
+            }
+            $("#test").html(html);
+        };
+        
+        window.time = performance.now();
+        workerHelper.createWorker(method, data, callback);
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
