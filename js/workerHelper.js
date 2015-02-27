@@ -3,7 +3,7 @@
     
     window.workerHelper = {
         createWorker: function (method, data, callback) {
-            if (!!window.Worker) {
+            if (!!window.Worker && !(navigator.userAgent.indexOf("MSIE ") > -1 || navigator.userAgent.indexOf("Trident/") > -1)) {
                 data = this.renderDataType(data);
                 
                 if (data.indexOf("!!!---ERROR---!!!") > -1) {
