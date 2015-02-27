@@ -28,6 +28,7 @@
         //callback is executed with the return or postMessage argument from method
         var callback = function (data) { console.log(data) };
         
+        //Create the worker!
         workerHelper.createWorker(method, data, callback);
     </script>
 </body>
